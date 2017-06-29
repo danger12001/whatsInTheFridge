@@ -1,0 +1,16 @@
+<ion-view hide-back-button="true" view-title="Login">
+  <ion-content class="padding">
+    <form ng-submit="login(login)" class='login' >
+      <span>Email</span>
+      <label class="item item-input item-stacked-label">
+        <input type='text'  ng-model='login.email' name='email'/>
+        </label>
+        <span>Password</span>
+      <label class="item item-input">
+        <input ng-model="login.password" name='password' type="password" />
+      </label>
+     <input class="button button-block button-balanced" type="submit" id="submit" value="Login" />
+    </form>
+    <div ng-show="errorCode" style='font-size: 25px; font-weight: bold; color: red; text-align: center;'>{{errorCode}}</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,35 @@
+<ion-view view-title="Register New Account">
+    <!-- <ion-nav-bar class="bar-dark">
+        <ion-nav-back-button class="no-border border-bottom margin-top">
+            <i class="ion-arrow-left-c icon-size"></i>
+        </ion-nav-back-button>
+    </ion-nav-bar> -->
+    <ion-header hide-back-button='true' class="bar bar-header bar-dark">
+                <button class="button button-clear button-icon ion-arrow-left-c" style='font-size: 15px;' ng-click="back()"> Back</button>
+                <h1 class="title">REGISTER</h1>
+     </ion-header>
+    <ion-content scroll="false">
+        <section class="reg-container">
+            <form name="registrationForm">
+                <div class="list">
+                    <div class="row div">
+                        <label class="item item-input no-border margin-right">
+                            <input type="text" placeholder="Email address" ng-model="data.email" required>
+                        </label>
+                    </div>
+                    <label class="item item-input no-border">
+                        <input type="password" placeholder="Password (at least 6 characters long)" ng-minlength="6" ng-model="data.password" required>
+                    </label>
+                    <label class="item item-input no-border">
+                        <input type="password" placeholder="Confirm password" ng-minlength="6" ng-model="data.confirmPassword" required>
+                    </label>
+                </div>
+                <div>
+                    <ion-input style=' width: 91%;position: absolute;bottom: 40px;'>
+                        <input ng-disabled='!(data.email && !registrationForm.$invalid)' type="submit" class="button button-block welcomebuttonred" value="REGISTER" ng-click="createUser()">
+                    </ion-input>
+                </div>
+            </form>
+        </section>
+    </ion-content>
+</ion-view>

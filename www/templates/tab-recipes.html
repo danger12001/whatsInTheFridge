@@ -1,0 +1,28 @@
+<ion-view view-title="Find Recipes" scroll='true'>
+  <ion-content>
+
+    <label class="item item-input">
+      <form ng-submit='addToInventory()'>
+      <span class="input-label">Inventory</span>
+      <input ng-model='data.add' type="text">
+      <input type="submit" id="submit" value="Submit" />
+      <ion-list>
+        <ion-item ng-repeat='item in data.inventory'>{{item}}</ion-item>
+      </ion-list>
+
+    </form>
+    </label>
+    <label class="item item-input">
+      <form ng-submit='search()'>
+    <input type="submit" id="submit" value="Search" />
+  </form>
+  </label>
+    <ion-list>
+      <ion-item ng-repeat='recipe in data.recipes' href="#/tab/recipe/{{recipe.recipe_id}}">
+        <img ng-src="{{recipe.image_url}}">
+        <h2>{{recipe.title}}</h2>
+        <p>{{recipe.recipe_id}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
